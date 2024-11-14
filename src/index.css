@@ -1,13 +1,103 @@
-body {
+/* App.css */
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.app {
+  width: 90%;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #4a90e2;
+}
+
+input[type="text"] {
+  width: 70%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #357abd;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+h2 {
+  font-size: 18px;
+  margin-top: 20px;
+  color: #333;
+}
+
+label {
+  font-size: 14px;
+  margin-right: 15px;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+.render-output {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fafafa;
+}
+
+p {
+  font-size: 14px;
+}
+
+p.error {
+  color: red;
+}
+
+p.success {
+  color: green;
+}
+
+p.status-message {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #888;
 }
