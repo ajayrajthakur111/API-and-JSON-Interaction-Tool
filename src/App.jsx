@@ -6,9 +6,8 @@ const App = () => {
   const [apiUrl, setApiUrl] = useState("");
   const [jsonData, setJsonData] = useState("");
   const [jsonError, setJsonError] = useState("");
-  const [renderType, setRenderType] = useState("html"); // Either 'html' or 'markdown'
+  const [renderType, setRenderType] = useState("html"); 
 
-  // Access the enqueueSnackbar function from notistack
   const { enqueueSnackbar } = useSnackbar();
 
   const fetchApiData = async () => {
@@ -40,7 +39,6 @@ const App = () => {
     }
   };
 
-  // Function to render JSON data as appropriate HTML elements
   const renderHtmlData = (data) => {
     if (typeof data === "object" && !Array.isArray(data)) {
       return (
@@ -61,20 +59,17 @@ const App = () => {
         </ul>
       );
     } else {
-      return <span>{data}</span>; // Simple value display
+      return <span>{data}</span>;
     }
   };
 
-  // Render JSON data as HTML or Markdown
   const renderJson = () => {
     try {
       const parsedJson = JSON.parse(jsonData);
 
       if (renderType === "html") {
-        // Render as structured HTML
         return <div>{renderHtmlData(parsedJson)}</div>;
       } else {
-        // Render as Markdown
         const markdown = marked(JSON.stringify(parsedJson, null, 2));
         return <div dangerouslySetInnerHTML={{ __html: markdown }} />;
       }
@@ -87,7 +82,6 @@ const App = () => {
     <div className="app" style={{ fontFamily: "Arial, sans-serif", padding: "20px", maxWidth: "800px", margin: "0 auto" }}>
       <h1>API and JSON Interaction Tool</h1>
 
-      {/* API Input */}
       <div style={{ marginBottom: "20px" }}>
         <input
           type="text"
@@ -99,7 +93,6 @@ const App = () => {
         <button onClick={fetchApiData} style={{ padding: "8px 12px", cursor: "pointer" }}>GET</button>
       </div>
 
-      {/* JSON Display / Manual Edit */}
       <div style={{ marginBottom: "20px" }}>
         <h2>JSON Data</h2>
         <textarea
@@ -112,7 +105,6 @@ const App = () => {
         {jsonError && <p style={{ color: "red" }}>{jsonError}</p>}
       </div>
 
-      {/* Select Render Type */}
       <div style={{ marginBottom: "20px" }}>
         <label style={{ marginRight: "10px" }}>
           <input
@@ -136,7 +128,6 @@ const App = () => {
         </label>
       </div>
 
-      {/* Render Output */}
       <div>
         <h2>Rendered Output</h2>
         {renderJson()}
